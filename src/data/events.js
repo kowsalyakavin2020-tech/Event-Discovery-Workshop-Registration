@@ -1,0 +1,56 @@
+const E = (id, title, category, image, date, time, city, mode, price, seats, taken, host, level, blurb, agenda) => ({
+  id, title, category, image, date, time, city, mode, price, seats, taken, host, level, blurb, agenda,
+})
+
+export const EVENTS = [
+  E(1, 'Full-Stack React Bootcamp Weekend', 'Technology', 'featured-coding', '2026-12-05', '10:00 AM', 'Madurai', 'In person', 1499, 40, 22, 'Karthik Raman', 'Intermediate',
+    'Two days building and deploying a real React app with routing, forms and animation, guided by engineers who ship daily.',
+    ['Project setup and component design', 'State, routing and forms', 'Animation with GSAP', 'Deploy and review']),
+  E(2, 'Interface Design Sprint', 'Design', 'featured-design', '2026-12-12', '9:30 AM', 'Chennai', 'In person', 999, 30, 18, 'Divya Narayan', 'Beginner',
+    'Go from a rough idea to a clickable mobile prototype in one day, with live critique at every checkpoint.',
+    ['Problem framing', 'Sketching and flows', 'Prototype build', 'Group critique']),
+  E(3, "Chef's Table Masterclass", 'Culinary', 'featured-cooking', '2026-12-19', '11:00 AM', 'Coimbatore', 'In person', 1299, 24, 20, 'Chef Lakshmi Pillai', 'All levels',
+    'Cook a four-course menu with a professional chef, then sit down together and eat what you made.',
+    ['Knife skills', 'Sauces and seasoning', 'Plating', 'Shared dinner']),
+  E(4, 'Street to Studio Photowalk', 'Art', 'featured-photo', '2026-12-21', '6:00 AM', 'Madurai', 'In person', 599, 25, 9, 'Siva Kumar', 'Beginner',
+    'Walk the old city at sunrise and learn light, framing and editing from a working photographer.',
+    ['Camera basics', 'Golden hour walk', 'Editing workflow', 'Print review']),
+  E(5, 'Still Life Painting Salon', 'Art', 'category-art', '2027-01-09', '2:00 PM', 'Chennai', 'In person', 799, 20, 6, 'Anitha Joseph', 'All levels',
+    'An unhurried afternoon of oil painting from a staged floral arrangement, with easels and paints provided.',
+    ['Composition', 'Colour mixing', 'Painting session', 'Gallery walk']),
+  E(6, 'Founders Growth Summit', 'Business', 'category-business', '2027-01-16', '9:00 AM', 'Bengaluru', 'In person', 2499, 200, 140, 'Panel of 12 founders', 'Advanced',
+    'A full day of talks and closed-door clinics on pricing, hiring and first-hundred-customer playbooks.',
+    ['Opening keynote', 'Pricing clinic', 'Hiring lab', 'Investor Q&A']),
+  E(7, 'Live Sessions Night', 'Music', 'category-music', '2027-01-23', '7:00 PM', 'Chennai', 'In person', 499, 150, 88, 'Open stage collective', 'All levels',
+    'Six local acts, one stage, and an open mic at the end for anyone brave enough to sign up.',
+    ['Doors and soundcheck', 'Featured sets', 'Open mic', 'Meet the artists']),
+  E(8, 'Sunrise Yoga & Breathwork', 'Wellness', 'category-wellness', '2026-12-06', '6:15 AM', 'Madurai', 'In person', 0, 35, 12, 'Revathi Suresh', 'Beginner',
+    'A free community session on the rooftop to start your Sunday slowly. Bring a mat and water.',
+    ['Breathwork', 'Flow sequence', 'Guided rest', 'Herbal tea']),
+  E(9, 'Product Teams Open Lab', 'Technology', 'experience-1', '2026-12-10', '6:30 PM', 'Online', 'Online', 0, 120, 64, 'Nikhil Varma', 'Intermediate',
+    'Bring a product problem and work it through with a live panel of designers, engineers and PMs.',
+    ['Problem lightning round', 'Live teardown', 'Panel discussion', 'Breakout rooms']),
+  E(10, 'Community Meetup Madurai', 'Business', 'experience-2', '2026-12-14', '5:30 PM', 'Madurai', 'In person', 0, 80, 41, 'Stackly Local', 'All levels',
+    'Meet freelancers, founders and makers from across the city over tea, short talks and honest introductions.',
+    ['Welcome circle', 'Five-minute talks', 'Networking', 'Tea and snacks']),
+  E(11, 'Women in Tech Conference', 'Technology', 'experience-3', '2027-02-06', '9:30 AM', 'Chennai', 'In person', 699, 180, 97, 'Programme committee', 'All levels',
+    'A day of keynotes, workshops and mentoring circles celebrating women building the next wave of software.',
+    ['Keynote', 'Skill workshops', 'Mentoring circles', 'Closing panel']),
+  E(12, 'Public Speaking Clinic', 'Education', 'gallery-3', '2027-02-13', '10:30 AM', 'Online', 'Online', 399, 60, 31, 'Prakash Menon', 'Beginner',
+    'Practise a five-minute talk in small groups and get specific, kind feedback you can use that week.',
+    ['Voice and pacing', 'Story structure', 'Practice rounds', 'Feedback']),
+  E(13, 'Teaching with Technology Day', 'Education', 'gallery-2', '2027-02-20', '10:00 AM', 'Madurai', 'In person', 299, 60, 24, 'Dr. Meera Subramanian', 'All levels',
+    'A practical day for teachers and trainers on using free digital tools to make classes more interactive.',
+    ['Tool tour', 'Lesson design lab', 'Classroom demos', 'Q&A']),
+  E(14, 'Career Pathways for Students', 'Education', 'about-team', '2027-02-27', '11:00 AM', 'Online', 'Online', 0, 150, 57, 'Industry mentor panel', 'Beginner',
+    'Mentors from software, design and business explain how they started and what to learn first.',
+    ['Mentor stories', 'Skills roadmap', 'Resume clinic', 'Open questions']),
+  E(15, 'Brand Identity Crash Course', 'Design', 'about-hands', '2027-03-06', '10:00 AM', 'Bengaluru', 'In person', 899, 40, 15, 'Isha Kapoor', 'Intermediate',
+    'Build a simple brand system, from logo and colour to type and usage rules, in one focused day.',
+    ['Brand brief', 'Logo and colour', 'Type and layout', 'Usage guide']),
+]
+
+export const formatDate = (iso, opts = { day: 'numeric', month: 'short', year: 'numeric' }) =>
+  new Date(iso + 'T00:00:00').toLocaleDateString('en-IN', opts)
+
+export const formatPrice = (p) => (p === 0 ? 'Free' : `₹${p.toLocaleString('en-IN')}`)

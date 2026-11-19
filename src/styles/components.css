@@ -1,0 +1,111 @@
+/* ---------- Section title ---------- */
+.sec-title { max-width: 720px; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.sec-title--center { margin-inline: auto; text-align: center; }
+.sec-title__h { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+.sec-title.sec-title--light p { color: color-mix(in srgb, var(--stone) 78%, transparent); }
+.sec-title p { margin-top: 1rem; color: var(--ink-soft); max-width: 56ch; margin-inline: inherit; }
+.sec-title--center p { margin-inline: auto; }
+
+/* ---------- Event card ---------- */
+.events__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.events__grid--three { grid-template-columns: repeat(3, 1fr); }
+.event-card__media { position: relative; aspect-ratio: 4 / 3.2; overflow: hidden; background: var(--forest); border-radius: var(--r); }
+.event-card__media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.75); transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s; }
+.event-card:hover .event-card__media img { transform: scale(1.1) rotate(1.5deg); filter: saturate(1.15); }
+.event-card__cat { position: absolute; left: 14px; bottom: 14px; display: inline-flex; gap: 0.4rem; align-items: center; padding: 0.35rem 0.8rem; border-radius: 99px; background: var(--stone); font-size: 0.85rem; font-weight: 600; }
+.event-card__date { position: absolute; top: 14px; left: 14px; display: grid; justify-items: center; line-height: 1; padding: 0.55rem 0.8rem; border-radius: 14px; background: var(--copper); color: var(--forest); }
+.event-card__date b { font-family: var(--font-head); font-size: 1.4rem; }
+.event-card__date small { font-size: 0.75rem; margin-top: 2px; }
+
+@media (max-width: 999px) { .events__grid, .events__grid--three { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .events__grid, .events__grid--three { grid-template-columns: 1fr; } }
+
+/* ---------- Forms ---------- */
+.field { display: grid; gap: 0.35rem; font-weight: 600; font-size: 0.95rem; }
+.field input, .field select { padding: 0.85rem 1rem; border-radius: 14px; border: 2px solid var(--line); background: #fff; font-weight: 400; transition: border-color 0.3s, box-shadow 0.3s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--forest); box-shadow: 0 0 0 4px color-mix(in srgb, var(--sage) 55%, transparent); }
+.field--bad input, .field--bad select { border-color: var(--copper); }
+.field em { color: var(--copper-text); font-style: normal; font-weight: 500; font-size: 0.85rem; }
+
+/* ---------- Modal ---------- */
+.modal { position: fixed; inset: 0; z-index: 150; display: grid; place-items: center; padding: 1rem; background: color-mix(in srgb, var(--forest) 78%, transparent); backdrop-filter: blur(6px); }
+.modal__panel { position: relative; width: min(1020px, 100%); max-height: calc(100dvh - 2rem); overflow: auto; display: grid; grid-template-columns: 0.8fr 1.2fr; background: var(--stone); border-radius: 32px; }
+.modal__close { position: sticky; top: 14px; float: right; grid-column: 2; margin: 14px 14px -48px 0; z-index: 3; width: 44px; height: 44px; border-radius: 50%; background: var(--forest); color: var(--stone); transition: transform 0.4s, background 0.3s; justify-self: end; }
+.modal__close:hover { background: var(--copper); transform: rotate(90deg); }
+.modal__media { position: relative; min-height: 260px; }
+.modal__media img { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); object-fit: cover; border-radius: var(--r); }
+.modal__price { position: absolute; left: 32px; bottom: 32px; padding: 0.5rem 1.1rem; border-radius: 99px; background: var(--sage); font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; }
+.modal__content { padding: 2.2rem 2.2rem 2.4rem; display: grid; gap: 1rem; align-content: start; }
+.modal__cat { color: var(--copper-text); font-weight: 700; }
+.modal__content h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.modal__content h3 { font-size: 1.15rem; margin-top: 0.4rem; }
+.modal__facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.2rem; font-size: 0.97rem; }
+.modal__facts i { color: var(--copper-text); width: 1.3rem; }
+.modal__agenda { display: grid; gap: 0.5rem; counter-reset: a; }
+.modal__agenda li { counter-increment: a; display: flex; gap: 0.8rem; align-items: center; }
+.modal__agenda li::before { content: counter(a); width: 28px; height: 28px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--forest); color: var(--stone); font-size: 0.85rem; font-weight: 700; }
+.reg-form { display: grid; gap: 1rem; padding: 1.4rem; margin-top: 0.6rem; border-radius: 24px; background: color-mix(in srgb, var(--sage) 30%, var(--stone)); }
+.reg-form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.pass { display: grid; justify-items: start; gap: 0.6rem; padding: 1.4rem; border-radius: 24px; background: var(--forest); color: var(--stone); }
+.pass > i { font-size: 2rem; color: var(--sage); }
+.pass strong { color: var(--sage); letter-spacing: 0.06em; }
+.modal__full { padding: 1rem 1.2rem; border-radius: 16px; background: color-mix(in srgb, var(--copper) 14%, var(--stone)); }
+
+@media (max-width: 800px) {
+  .modal__panel { grid-template-columns: 1fr; }
+  .modal__close { grid-column: 1; margin-bottom: -58px; }
+  .modal__media { min-height: 200px; }
+  .modal__content { padding: 1.5rem; }
+  .modal__facts, .reg-form__grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Empty states ---------- */
+.empty { display: grid; justify-items: center; gap: 1rem; padding: 3rem 1rem; text-align: center; }
+.empty img { width: 220px; aspect-ratio: 1; object-fit: cover; border-radius: var(--r); }
+.empty--wide { grid-template-columns: 0.8fr 1fr; justify-items: start; text-align: left; align-items: center; gap: 3rem; }
+.empty--wide img { width: 100%; aspect-ratio: 4 / 3; border-radius: var(--r); }
+.empty--wide p { margin: 0.8rem 0 1.6rem; color: var(--ink-soft); }
+@media (max-width: 760px) { .empty--wide { grid-template-columns: 1fr; } }
+
+/* ---------- Event card extras ---------- */
+.event-card__fav { position: absolute; top: 14px; right: 14px; z-index: 2; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--stone) 92%, transparent); color: var(--forest); font-size: 1.05rem; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s; }
+.event-card__fav:hover { transform: scale(1.15) rotate(-8deg); }
+.event-card__fav.is-on { background: var(--copper); }
+
+/* ---------- Modal actions ---------- */
+.reg-form__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.reg-form__actions .btn--copper { flex: 1; }
+.reg-form__err { color: var(--copper-text); font-style: normal; font-weight: 600; }
+.reg-form { grid-template-columns: 1fr; }
+.modal__content > .btn--wide { margin-top: 0.4rem; }
+
+/* ---------- Buttons: small + outline, card actions ---------- */
+.btn--sm { padding: 0.6rem 1.05rem; font-size: 0.9rem; }
+.btn--outline { border-color: currentColor; background: transparent; }
+.btn--outline:hover { background: var(--forest); color: var(--stone); border-color: var(--forest); }
+
+/* ---------- Uniform event cards: every card has the same rows, buttons share one line ---------- */
+.event-card { display: flex; flex-direction: column; gap: 1.1rem; height: 100%; }
+.event-card__body { display: flex; flex-direction: column; gap: 0.8rem; flex: 1; }
+.event-card__title { font-size: 1.35rem; line-height: 1.2; min-height: 2.4em; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.3s; }
+.event-card:hover .event-card__title { color: var(--copper-text); }
+.event-card__meta { display: grid; gap: 0.35rem; color: var(--ink-soft); font-size: 0.95rem; }
+.event-card__meta li { display: flex; align-items: center; gap: 0.55rem; }
+.event-card__meta i { width: 1rem; text-align: center; color: var(--copper-text); }
+.event-card__meta .is-low { color: var(--copper-text); font-weight: 600; }
+.event-card__foot { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: auto; padding-top: 1rem; border-top: 2px dashed var(--line); }
+.event-card__foot .btn, .event-card__done { width: 100%; min-width: 0; white-space: nowrap; }
+.event-card__done { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.6rem 0.8rem; border-radius: 99px; background: color-mix(in srgb, var(--sage) 28%, var(--stone)); font-weight: 600; font-size: 0.9rem; }
+.event-card__done i { color: var(--copper-text); }
+.event-card__price { position: absolute; right: 14px; bottom: 14px; padding: 0.35rem 0.9rem; border-radius: 99px; background: var(--forest); color: var(--stone); font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; }
+
+/* ---------- Errors are red ---------- */
+:root { --error: #d4202c; }
+.field em, .reg-form__err { color: var(--error); }
+.field--bad input, .field--bad select { border-color: var(--error); }
+
+@media (max-width: 560px) {
+  .reg-form { padding: 1rem; }
+  .reg-form__actions { flex-direction: column-reverse; }
+  .reg-form__actions .btn { width: 100%; }
+}

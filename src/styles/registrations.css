@@ -1,0 +1,73 @@
+/* ---------- Banner ---------- */
+.rban { position: relative; overflow: hidden; width: min(1240px, 100% - 2.5rem); margin: 0.5rem auto 0; border-radius: var(--r-lg); background: var(--forest); color: var(--stone); padding-block: clamp(2rem, 5vw, 4rem); }
+.rban .container { width: 100%; padding-inline: clamp(1.5rem, 4vw, 3.5rem); }
+.rban__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2; }
+.rban__grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.rban .xban__crumb { background: var(--copper); color: var(--forest); }
+.rban__title { font-size: clamp(2.4rem, 4.8vw, 4.2rem); margin: 1.2rem 0; letter-spacing: -0.035em; }
+.rban__lead { max-width: 44ch; color: color-mix(in srgb, var(--stone) 82%, transparent); }
+.rban__panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.rban__tile { display: grid; gap: 0.2rem; padding: 1.4rem; border-radius: var(--r-sm); background: color-mix(in srgb, var(--stone) 10%, transparent); border: 1px solid color-mix(in srgb, var(--stone) 22%, transparent); backdrop-filter: blur(6px); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s; }
+.rban__tile:hover { transform: translateY(-6px); background: color-mix(in srgb, var(--stone) 18%, transparent); }
+.rban__tile > i { color: var(--sage); font-size: 1.4rem; }
+.rban__tile b { font-family: var(--font-head); font-size: 2.6rem; line-height: 1; }
+.rban__tile--wide { grid-column: 1 / -1; }
+.rban__next { font-weight: 600; }
+.rban__clock { display: flex; gap: 0.8rem; margin-top: 0.6rem; }
+.rban__clock p { display: grid; justify-items: center; min-width: 64px; padding: 0.6rem 0.4rem; border-radius: 12px; background: var(--copper); color: var(--forest); }
+.rban__clock b { font-size: 1.7rem; }
+.rban__clock small { font-size: 0.75rem; }
+@media (max-width: 860px) { .rban__grid { grid-template-columns: 1fr; } }
+
+/* ---------- Tickets ---------- */
+.tickets { padding-top: 3.5rem; }
+.ticket__list { display: grid; gap: 1.4rem; }
+.ticket { display: grid; grid-template-columns: 240px 1fr 230px; align-items: stretch; overflow: hidden; border-radius: var(--r); background: #fff; border: 1px solid var(--line); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s; }
+.ticket:hover { transform: translateY(-6px); box-shadow: 0 28px 44px -30px color-mix(in srgb, var(--forest) 65%, transparent); }
+.ticket__img { padding: 14px; }
+.ticket__img img { width: 100%; height: 100%; min-height: 160px; object-fit: cover; border-radius: var(--r-sm); transition: filter 0.5s; }
+.ticket:hover .ticket__img img { filter: saturate(1.25); }
+.ticket__main { display: grid; gap: 0.6rem; align-content: center; padding: 1.4rem 1.2rem; }
+.ticket__cat { color: var(--copper-text); font-weight: 700; font-size: 0.9rem; }
+.ticket__main h3 { font-size: 1.5rem; }
+.ticket__facts { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-size: 0.95rem; }
+.ticket__facts i, .ticket__who i { color: var(--copper-text); margin-right: 0.4rem; }
+.ticket__who { font-size: 0.9rem; color: var(--ink-soft); overflow-wrap: anywhere; }
+.ticket__stub { position: relative; display: grid; gap: 0.4rem; align-content: center; justify-items: center; padding: 1.4rem; text-align: center; background: var(--sage); border-left: 3px dashed var(--forest); transition: background 0.5s, color 0.5s; }
+.ticket__stub::before, .ticket__stub::after { content: ''; position: absolute; left: -14px; width: 24px; height: 24px; border-radius: 50%; background: var(--stone); }
+.ticket__stub::before { top: -12px; }
+.ticket__stub::after { bottom: -12px; }
+.ticket__stub strong { font-family: var(--font-head); font-size: 1.5rem; letter-spacing: 0.06em; }
+.ticket:hover .ticket__stub { background: var(--forest); color: var(--stone); border-left-color: var(--copper); }
+.ticket:hover .ticket__stub strong { color: var(--sage); }
+.ticket__cancel, .ticket__confirm button { padding: 0.5rem 1rem; border-radius: 99px; font-weight: 600; font-size: 0.9rem; border: 2px solid currentColor; transition: background 0.3s, color 0.3s, border-color 0.3s; }
+.ticket__cancel:hover, .ticket__confirm button:first-child { background: var(--copper); color: var(--forest); border-color: var(--copper); }
+.ticket__confirm { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; }
+@media (max-width: 860px) {
+  .ticket { grid-template-columns: 1fr; }
+  .ticket__img img { height: 190px; }
+  .ticket__stub { border-left: 0; border-top: 3px dashed var(--forest); }
+  .ticket__stub::before, .ticket__stub::after { top: -12px; bottom: auto; }
+  .ticket__stub::before { left: -12px; }
+  .ticket__stub::after { left: auto; right: -12px; }
+}
+
+/* ---------- Suggestions ---------- */
+.sugg { background: color-mix(in srgb, var(--sage) 30%, var(--stone)); }
+
+/* ---------- Ticket: padded card, nothing touches the edge ---------- */
+.ticket { grid-template-columns: 220px minmax(0, 1fr) 220px; gap: 1.2rem; padding: 14px; }
+.ticket__img { padding: 0; }
+.ticket__main { padding: 0.4rem 0.2rem; }
+.ticket__stub { border: 2px dashed color-mix(in srgb, var(--forest) 35%, transparent); border-radius: var(--r-sm); }
+.ticket__stub::before, .ticket__stub::after { display: none; }
+.ticket:hover .ticket__stub { border-color: var(--forest); }
+@media (max-width: 860px) { .ticket { grid-template-columns: 1fr; gap: 1rem; } .ticket__stub { border-left: 2px dashed color-mix(in srgb, var(--forest) 35%, transparent); } }
+
+@media (max-width: 560px) {
+  .rban .container { padding-inline: 1.1rem; }
+  .rban__tile { padding: 1.1rem; }
+  .rban__clock { gap: 0.4rem; }
+  .rban__clock p { flex: 1; min-width: 0; padding: 0.5rem 0.2rem; }
+  .rban__clock b { font-size: 1.4rem; }
+}

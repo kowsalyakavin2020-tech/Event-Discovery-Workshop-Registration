@@ -1,0 +1,87 @@
+/* ---------- Banner ---------- */
+.xban { padding: 0.5rem 0 1rem; }
+.xban__panel { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: center; padding: clamp(1.5rem, 4vw, 3.5rem); border-radius: var(--r-lg); overflow: hidden; background: color-mix(in srgb, var(--sage) 42%, var(--stone)); }
+.xban__crumb { display: inline-flex; gap: 0.5rem; align-items: center; padding: 0.4rem 1rem; border-radius: 99px; background: var(--forest); color: var(--stone); font-weight: 600; font-size: 0.92rem; }
+.xban__title { font-size: clamp(2.4rem, 4.8vw, 4.3rem); margin: 1.2rem 0; letter-spacing: -0.035em; }
+.xban__lead { max-width: 48ch; font-size: 1.12rem; color: var(--ink-soft); }
+.xban__stats { display: flex; flex-wrap: wrap; gap: 1rem 2.2rem; margin-top: 1.8rem; }
+.xban__stats li { display: grid; font-size: 0.92rem; color: var(--ink-soft); }
+.xban__stats b { font-family: var(--font-head); font-size: 2.3rem; line-height: 1; color: var(--forest); }
+.xban__mosaic { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding-bottom: 36px; }
+.xtile { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--r); background: var(--forest); }
+.xtile:nth-child(even) { margin-top: 36px; margin-bottom: -36px; }
+.xtile img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1); }
+.xtile:hover img { transform: scale(1.1); }
+.xtile figcaption { position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.4rem 0.9rem; border-radius: 99px; background: var(--stone); font-weight: 600; font-size: 0.9rem; transform: translateY(calc(100% + 24px)); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.xtile figcaption i { color: var(--copper-text); }
+.xtile:hover figcaption { transform: none; }
+@media (hover: none) { .xtile figcaption { transform: none; } }
+.xban__chip { position: absolute; z-index: 2; left: 50%; top: 50%; width: 190px; margin: -22px 0 0 -95px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 0; border-radius: 99px; background: var(--copper); color: var(--forest); font-weight: 600; font-size: 0.92rem; box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.5); }
+@media (max-width: 860px) { .xban__panel { grid-template-columns: 1fr; } }
+
+/* ---------- Toolbar ---------- */
+.browser { padding-top: 3rem; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+.search { flex: 1 1 280px; display: flex; align-items: center; gap: 0.7rem; padding: 0 1.2rem; border-radius: 99px; background: #fff; border: 2px solid var(--line); transition: border-color 0.3s, box-shadow 0.3s; }
+.search:focus-within { border-color: var(--forest); box-shadow: 0 0 0 4px color-mix(in srgb, var(--sage) 60%, transparent); }
+.search i { color: var(--copper-text); }
+.search input { flex: 1; min-width: 0; padding: 0.9rem 0; border: 0; background: none; }
+.search input:focus { outline: none; }
+.seg { display: inline-flex; padding: 4px; border-radius: 99px; background: color-mix(in srgb, var(--forest) 8%, transparent); }
+.seg button { padding: 0.6rem 1.1rem; border-radius: 99px; font-weight: 600; font-size: 0.92rem; transition: background 0.3s, color 0.3s; }
+.seg button.is-on { background: var(--forest); color: var(--stone); }
+.sort { display: flex; align-items: center; gap: 0.5rem; padding: 0 0.4rem 0 1.1rem; border-radius: 99px; background: #fff; border: 2px solid var(--line); }
+.sort select { border: 0; background: none; padding: 0.8rem 0.6rem; font-weight: 600; cursor: pointer; }
+.sort select:focus { outline: none; }
+.chips { display: flex; gap: 0.6rem; overflow-x: auto; padding: 1.4rem 0 0.4rem; scrollbar-width: none; }
+.chip { flex: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: 99px; border: 2px solid var(--line); font-weight: 600; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s, color 0.3s, border-color 0.3s; }
+.chip:hover { transform: translateY(-4px); border-color: var(--forest); }
+.chip.is-on { background: var(--copper); color: var(--forest); border-color: var(--copper); }
+.browser__count { margin: 1.6rem 0 1.4rem; color: var(--ink-soft); font-weight: 500; }
+
+/* ---------- Teach something with us ---------- */
+.host__panel { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: center; padding: clamp(1.5rem, 4vw, 3.5rem); border-radius: var(--r-lg); background: var(--forest); color: var(--stone); }
+.host__copy .sec-title { margin-bottom: 1.6rem; }
+.host__perks { display: grid; gap: 0.8rem; }
+.host__perks li { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.1rem; border-radius: var(--r-sm); border: 1px solid color-mix(in srgb, var(--stone) 22%, transparent); transition: background 0.4s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.host__perks li:hover { background: color-mix(in srgb, var(--stone) 9%, transparent); transform: translateX(10px); }
+.host__perks i { width: 46px; height: 46px; flex: none; display: grid; place-items: center; border-radius: 12px; background: var(--sage); color: var(--forest); }
+.host__perks b { font-family: var(--font-head); font-size: 1.5rem; margin-right: 0.3rem; }
+.host__card { padding: 1.8rem; border-radius: var(--r); background: var(--stone); color: var(--forest); }
+.host__card form { display: grid; gap: 1rem; }
+.host__card h3 { font-size: 1.5rem; }
+.host__sent { display: grid; gap: 0.6rem; justify-items: start; }
+.host__sent i { font-size: 2.4rem; color: var(--copper-text); }
+.host__strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.2rem; }
+.hstile { position: relative; aspect-ratio: 16 / 11; overflow: hidden; border-radius: var(--r); background: var(--forest); }
+.hstile img { width: 100%; height: 122%; object-fit: cover; transition: filter 0.6s; }
+.hstile:hover img { filter: saturate(1.25) brightness(0.9); }
+.hstile figcaption { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 0.6rem; padding: 2rem 1.3rem 1.1rem; background: linear-gradient(transparent, color-mix(in srgb, var(--forest) 92%, transparent)); color: var(--stone); font-weight: 600; transform: translateY(100%); transition: transform 0.55s cubic-bezier(0.65, 0, 0.35, 1); }
+.hstile:hover figcaption { transform: none; }
+@media (hover: none) { .hstile figcaption { transform: none; } }
+@media (max-width: 860px) { .host__panel { grid-template-columns: 1fr; } .host__strip { grid-template-columns: 1fr; } }
+
+/* ---------- Location + favourites controls ---------- */
+.favtoggle { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.2rem; border-radius: 99px; border: 2px solid var(--line); background: #fff; font-weight: 600; transition: background 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.favtoggle:hover { transform: translateY(-3px); border-color: var(--forest); }
+.favtoggle span { min-width: 1.5rem; height: 1.5rem; display: inline-grid; place-items: center; border-radius: 99px; background: var(--forest); color: var(--stone); font-size: 0.78rem; }
+.favtoggle.is-on { background: var(--copper); border-color: var(--copper); }
+.sort i { color: var(--copper-text); }
+
+/* ---------- Toolbar: every control the same height, on one line ---------- */
+.toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 0.8rem; align-items: stretch; }
+.search, .sort, .favtoggle { height: 54px; box-sizing: border-box; }
+.search { padding: 0 1.2rem; }
+.sort { padding: 0 0.9rem 0 1.1rem; }
+.sort select { height: 100%; padding: 0 0.4rem; }
+.favtoggle { justify-content: center; padding: 0 1.2rem; white-space: nowrap; }
+.xban__panel--single { grid-template-columns: 1fr; }
+@media (max-width: 1000px) { .toolbar { grid-template-columns: 1fr 1fr; } .search { grid-column: 1 / -1; } .favtoggle { grid-column: 1 / -1; } }
+@media (max-width: 560px) { .toolbar { grid-template-columns: 1fr; } }
+.host__copy, .host__card { min-width: 0; }
+@media (max-width: 560px) { .host__panel { padding: 1.2rem; gap: 1.6rem; } .host__card { padding: 1.2rem; } .host__perks b { font-size: 1.25rem; } }
+@media (max-width: 560px) {
+  .xban__panel { padding: 1.4rem 1.2rem; }
+  .xban__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+  .xban__stats b { font-size: 1.8rem; }
+}

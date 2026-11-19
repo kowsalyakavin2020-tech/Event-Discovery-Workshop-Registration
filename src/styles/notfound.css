@@ -1,0 +1,25 @@
+/* ---------- 404: full-viewport, no header or footer ---------- */
+.nf { position: relative; height: 100dvh; min-height: 100dvh; overflow: hidden; display: grid; place-items: center; padding: 1.5rem; color: var(--stone); background: radial-gradient(700px 480px at 15% 100%, color-mix(in srgb, var(--copper) 32%, transparent), transparent 62%), radial-gradient(600px 400px at 90% 0%, color-mix(in srgb, var(--sage) 22%, transparent), transparent 60%), var(--forest); }
+.nf__inner { position: relative; z-index: 1; display: grid; justify-items: center; gap: clamp(0.8rem, 3vh, 2rem); max-width: 640px; text-align: center; }
+.nf__code { display: flex; align-items: center; justify-content: center; gap: clamp(0.2rem, 2vw, 1rem); font-size: min(30vw, 26vh, 12rem); line-height: 0.95; letter-spacing: -0.05em; }
+.nf__digit { display: block; color: var(--copper); }
+.nf__digit--ring { color: var(--stone); font-size: 0.78em; }
+.nf__spin { display: block; }
+.nf__copy { display: grid; gap: 0.9rem; justify-items: center; }
+.nf__tag { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 99px; border: 1px solid color-mix(in srgb, var(--stone) 28%, transparent); font-weight: 500; font-size: 0.92rem; }
+.nf__tag i { color: var(--copper); }
+.nf__copy h2 { font-size: clamp(1.6rem, 4.5vw, 2.8rem); }
+.nf__copy > p:not(.nf__tag) { max-width: 42ch; color: color-mix(in srgb, var(--stone) 78%, transparent); }
+.nf__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-top: 0.4rem; }
+.nf .btn--ghost { border-color: color-mix(in srgb, var(--stone) 45%, transparent); color: var(--stone); }
+.nf .btn--ghost:hover { background: var(--stone); color: var(--forest); }
+.nf .btn--copper:hover { background: var(--stone); color: var(--forest); box-shadow: 0 14px 0 -6px var(--copper); }
+.nf__float { position: absolute; z-index: 0; width: clamp(44px, 6vw, 72px); aspect-ratio: 1; display: grid; place-items: center; border-radius: var(--r-sm); background: color-mix(in srgb, var(--stone) 8%, transparent); border: 1px solid color-mix(in srgb, var(--stone) 18%, transparent); color: var(--sage); font-size: clamp(1.1rem, 2.2vw, 1.7rem); }
+.nf__float--a { top: 12%; left: 8%; }
+.nf__float--b { top: 18%; right: 10%; }
+.nf__float--c { bottom: 16%; left: 12%; }
+.nf__float--d { bottom: 12%; right: 8%; }
+.nf__float--e { top: 48%; left: 3%; }
+.nf__float--f { top: 44%; right: 4%; }
+.nf__float--g { top: 6%; left: 46%; }
+@media (max-width: 700px) { .nf__float--e, .nf__float--f, .nf__float--g { display: none; } .nf__float--a { top: 5%; left: 6%; } .nf__float--b { top: 7%; } .nf__float--c { bottom: 5%; } .nf__float--d { bottom: 6%; } }
