@@ -13,7 +13,7 @@ export default function EventCard({ event, onOpen }) {
   return (
     <article className="event-card">
       <div className="event-card__media">
-        <img src={`/images/${event.image}.webp`} alt={event.title} loading="lazy" />
+        <img src={`${import.meta.env.BASE_URL}images/${event.image}.webp`} alt={event.title} loading="lazy" />
         <span className="event-card__cat">
           <i className={`fa-solid ${CATEGORY_ICON[event.category]}`} /> {event.category}
         </span>

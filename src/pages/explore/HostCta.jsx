@@ -83,7 +83,7 @@ export default function HostCta() {
         <div className="host__strip">
           {STRIP.map(([img, label, icon], i) => (
             <figure key={img} className="hstile" data-anim={`curtain:${i * 0.12}`}>
-              <img data-parallax="-8" src={`/images/${img}.webp`} alt={label} loading="lazy" />
+              <img data-parallax="-8" src={`${import.meta.env.BASE_URL}images/${img}.webp`} alt={label} loading="lazy" />
               <figcaption><i className={`fa-solid ${icon}`} /> {label}</figcaption>
             </figure>
           ))}

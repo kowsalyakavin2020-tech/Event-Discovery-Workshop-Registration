@@ -47,7 +47,7 @@ export default function Process() {
                 <div className="pstep__body">
                   <h3>{s.title}</h3>
                   <div className="pstep__more"><p>{s.text}</p></div>
-                  <img className="pstep__img" src={`/images/${s.image}.webp`} alt="" loading="lazy" />
+                  <img className="pstep__img" src={`${import.meta.env.BASE_URL}images/${s.image}.webp`} alt="" loading="lazy" />
                 </div>
                 <i className={`fa-solid ${s.icon} pstep__icon`} />
               </li>
@@ -58,7 +58,7 @@ export default function Process() {
         <div className="proc__media" aria-hidden="true">
           {STEPS.map((s, i) => (
             <figure key={s.title} className={`proc__frame ${i === active ? 'is-on' : ''}`}>
-              <img src={`/images/${s.image}.webp`} alt="" loading="lazy" />
+              <img src={`${import.meta.env.BASE_URL}images/${s.image}.webp`} alt="" loading="lazy" />
             </figure>
           ))}
           <span className="proc__count"><b>0{active + 1}</b> / 0{STEPS.length}</span>

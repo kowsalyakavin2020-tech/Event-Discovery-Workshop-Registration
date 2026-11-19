@@ -26,7 +26,7 @@ export default function Moments() {
         <div key={key} className={`moments__row moments__row--${key}`}>
           {row(list).map((img, i) => (
             <figure key={i} className={`moments__item moments__item--${i % 3}`}>
-              <img src={`/images/${img}.webp`} alt="Attendees at a past Stackly session" loading="lazy" />
+              <img src={`${import.meta.env.BASE_URL}images/${img}.webp`} alt="Attendees at a past Stackly session" loading="lazy" />
             </figure>
           ))}
         </div>

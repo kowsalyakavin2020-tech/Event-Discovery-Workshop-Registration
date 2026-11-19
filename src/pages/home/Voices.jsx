@@ -24,7 +24,7 @@ export default function Voices() {
           {VOICES.map((v, i) => (
             <figure key={v.name} className="voice">
               <div className="voice__photo" data-anim={i ? 'curtain:0.1' : 'curtain'}>
-                <img src={`/images/${v.image}.webp`} alt={v.name} loading="lazy" />
+                <img src={`${import.meta.env.BASE_URL}images/${v.image}.webp`} alt={v.name} loading="lazy" />
               </div>
               <blockquote data-anim={i ? 'right:0.15' : 'left:0.15'}>
                 <i className="fa-solid fa-quote-left" />

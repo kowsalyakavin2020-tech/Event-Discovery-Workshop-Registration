@@ -19,7 +19,7 @@ export default function Newsletter() {
 
   return (
     <section className="news">
-      <img className="news__bg" src="/images/newsletter-bg.webp" alt="" loading="lazy" />
+      <img className="news__bg" src={`${import.meta.env.BASE_URL}images/newsletter-bg.webp`} alt="" loading="lazy" />
       <div className="container news__box" data-anim="up">
         <h2>Get the weekly shortlist</h2>
         <p>Five events worth your Saturday, sent every Thursday. Unsubscribe in one click.</p>

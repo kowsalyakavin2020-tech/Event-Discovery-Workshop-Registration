@@ -71,7 +71,7 @@ export default function EventModal({ event, initialStep = 'details', onClose }) 
         </button>
 
         <div className="modal__media">
-          <img src={`/images/${event.image}.webp`} alt={`${event.title} banner`} />
+          <img src={`${import.meta.env.BASE_URL}images/${event.image}.webp`} alt={`${event.title} banner`} />
           <span className="modal__price">{formatPrice(event.price)}</span>
         </div>
 

@@ -26,7 +26,7 @@ export default function TicketList() {
       <div className="container">
         {tickets.length === 0 ? (
           <div className="empty empty--wide">
-            <img src="/images/experience-2.webp" alt="" />
+            <img src={`${import.meta.env.BASE_URL}images/experience-2.webp`} alt="" />
             <div>
               <h2>No seats reserved yet</h2>
               <p>When you register for a workshop, your pass shows up here with its code and date.</p>
@@ -37,7 +37,7 @@ export default function TicketList() {
           <ul className="ticket__list">
             {tickets.map((t) => (
               <li key={t.id} className="ticket">
-                <figure className="ticket__img"><img src={`/images/${t.event.image}.webp`} alt="" loading="lazy" /></figure>
+                <figure className="ticket__img"><img src={`${import.meta.env.BASE_URL}images/${t.event.image}.webp`} alt="" loading="lazy" /></figure>
                 <div className="ticket__main">
                   <p className="ticket__cat">{t.event.category}</p>
                   <h3>{t.event.title}</h3>

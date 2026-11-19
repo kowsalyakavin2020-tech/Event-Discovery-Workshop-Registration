@@ -41,7 +41,7 @@ export default function Preloader({ onReveal, onDone }) {
             <span key={icon} className="pre__icon"><i className={`fa-solid ${icon}`} /></span>
           ))}
         </div>
-        <img className="pre__logo" src="/images/logo-light.png" alt={BRAND.name} />
+        <img className="pre__logo" src={`${import.meta.env.BASE_URL}images/logo-light.png`} alt={BRAND.name} />
         <div className="pre__meter">
           <div className="pre__bar"><i /></div>
           <span className="pre__percent">0</span>

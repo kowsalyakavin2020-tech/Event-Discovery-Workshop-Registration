@@ -12,7 +12,7 @@ export default function Categories() {
         <div className="cats__rail" data-anim="curtain">
           {CATEGORIES.map((c) => (
             <Link key={c.name} to={`/events?category=${c.name}`} className="cat">
-              <img src={`/images/${c.image}.webp`} alt="" loading="lazy" />
+              <img src={`${import.meta.env.BASE_URL}images/${c.image}.webp`} alt="" loading="lazy" />
               <span className="cat__label">{c.name}</span>
               <span className="cat__body">
                 <i className={`fa-solid ${c.icon}`} />

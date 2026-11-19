@@ -40,7 +40,7 @@ export default function WishlistPage() {
             </div>
           ) : (
             <div className="empty empty--wide">
-              <img src="/images/gallery-5.webp" alt="" />
+              <img src={`${import.meta.env.BASE_URL}images/gallery-5.webp`} alt="" />
               <div>
                 <h2>Your wishlist is empty</h2>
                 <p>Save the events you like and they will show up here, ready to register.</p>

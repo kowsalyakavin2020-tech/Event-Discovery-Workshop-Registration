@@ -47,7 +47,7 @@ export default function FeaturedEvents() {
                   </div>
                 </div>
                 <figure className="feat-card__img">
-                  <img src={`/images/${e.image}.webp`} alt={e.title} loading="lazy" />
+                  <img src={`${import.meta.env.BASE_URL}images/${e.image}.webp`} alt={e.title} loading="lazy" />
                 </figure>
               </article>
             )

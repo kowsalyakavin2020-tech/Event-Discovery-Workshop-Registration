@@ -4,7 +4,7 @@ export default function Spotlight() {
   return (
     <section className="spot">
       <div className="spot__bg" aria-hidden="true">
-        <img data-parallax="14" src="/images/spotlight-main.webp" alt="" loading="lazy" />
+        <img data-parallax="14" src={`${import.meta.env.BASE_URL}images/spotlight-main.webp`} alt="" loading="lazy" />
       </div>
       <div className="container spot__grid">
         <div>
@@ -20,7 +20,7 @@ export default function Spotlight() {
           </ul>
         </div>
         <figure className="spot__orb" data-anim="pop:0.2">
-          <img src="/images/spotlight-detail.webp" alt="Two attendees reviewing code together on a laptop" loading="lazy" />
+          <img src={`${import.meta.env.BASE_URL}images/spotlight-detail.webp`} alt="Two attendees reviewing code together on a laptop" loading="lazy" />
         </figure>
       </div>
     </section>

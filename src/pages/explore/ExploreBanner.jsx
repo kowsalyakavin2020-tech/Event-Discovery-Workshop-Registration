@@ -46,7 +46,7 @@ export default function ExploreBanner() {
           <div className="xban__mosaic">
             {TILES.map((t) => (
               <figure key={t.label} className="xtile">
-                <img src={`/images/${t.img}.webp`} alt={`${t.label} workshop`} />
+                <img src={`${import.meta.env.BASE_URL}images/${t.img}.webp`} alt={`${t.label} workshop`} />
                 <figcaption><i className={`fa-solid ${t.icon}`} /> {t.label}</figcaption>
               </figure>
             ))}

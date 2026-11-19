@@ -102,7 +102,7 @@ export default function EventBrowser() {
           </div>
         ) : (
           <div className="empty" ref={grid}>
-            <img src="/images/gallery-5.webp" alt="" />
+            <img src={`${import.meta.env.BASE_URL}images/gallery-5.webp`} alt="" />
             <h3>No events match your search</h3>
             <p>Try a different name, location or category, or clear the filters to see every event.</p>
             <button type="button" className="btn btn--copper" onClick={reset}><i className="fa-solid fa-rotate-left" /> Clear filters</button>

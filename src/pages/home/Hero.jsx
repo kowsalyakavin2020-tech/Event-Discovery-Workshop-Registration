@@ -60,14 +60,14 @@ export default function Hero() {
                 <div key={col} className={`reel ${col === 1 ? 'reel--down' : ''}`}>
                   <div className="reel__track">
                     {[...imgs, ...imgs].map((img, i) => (
-                      <figure key={i} className="reel__item"><img src={`/images/${img}.webp`} alt="" /></figure>
+                      <figure key={i} className="reel__item"><img src={`${import.meta.env.BASE_URL}images/${img}.webp`} alt="" /></figure>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
             <button type="button" className="hero__card" onClick={() => setOpen(true)}>
-              <img src={`/images/${NEXT.image}.webp`} alt="" />
+              <img src={`${import.meta.env.BASE_URL}images/${NEXT.image}.webp`} alt="" />
               <div>
                 <small>Upcoming event</small>
                 <strong>{NEXT.title}</strong>

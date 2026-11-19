@@ -37,7 +37,7 @@ export default function RegBanner() {
 
   return (
     <section className="rban" ref={root}>
-      <img className="rban__bg" src="/images/about-studio.webp" alt="" />
+      <img className="rban__bg" src={`${import.meta.env.BASE_URL}images/about-studio.webp`} alt="" />
       <div className="container rban__grid">
         <div>
           <p className="xban__crumb"><i className="fa-solid fa-ticket" /> My registrations</p>
